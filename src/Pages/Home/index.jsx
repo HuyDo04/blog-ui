@@ -22,9 +22,9 @@ function Home () {
               <button className={styles.createTopicButton} onClick={() => navigate("/topics/create")}>
                 + Tạo mới Topic
               </button>
-              <button className={styles.createPostButton} onClick={() => navigate("/posts/create")}>
+              {/* <button className={styles.createPostButton} onClick={() => navigate("/posts/create")}>
                 + Tạo mới Post
-              </button>
+              </button> */}
             </div>
           {topics.length === 0 && <p>Loading...</p>}
           <ul>
