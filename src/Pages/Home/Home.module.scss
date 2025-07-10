@@ -1,0 +1,68 @@
+// 🌈 Variables
+$primary-color: #0070f3;
+$text-color: #333;
+$gray: #888;
+$border-color: #eaeaea;
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: $text-color;
+
+    h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 40px;
+        color: $primary-color;
+    }
+}
+
+.topic {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid $border-color;
+
+    .topicTitle {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: $primary-color;
+        border-left: 5px solid $primary-color;
+        padding-left: 10px;
+    }
+
+    .postList {
+        list-style: none;
+        padding-left: 0;
+
+        .postItem {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid $border-color;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .postTitle {
+                font-size: 20px;
+                margin: 0 0 10px 0;
+                color: $primary-color;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .postContent {
+                margin: 0;
+                color: $gray;
+                line-height: 1.6;
+            }
+        }
+    }
+}

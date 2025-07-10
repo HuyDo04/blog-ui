@@ -1,0 +1,231 @@
+/* PostDetail.module.scss */
+
+.postDetail {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 768px) {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.75rem;
+    }
+}
+
+.content {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #4a5568;
+    margin-top: 2rem;
+    text-align: justify;
+
+    // Styling for common HTML elements within content
+    p {
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        color: #2d3748;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    ul,
+    ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    blockquote {
+        border-left: 4px solid #667eea;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: #718096;
+        background-color: #f7fafc;
+        padding: 1rem;
+        border-radius: 0 8px 8px 0;
+    }
+
+    code {
+        background-color: #f7fafc;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        color: #e53e3e;
+    }
+
+    pre {
+        background-color: #2d3748;
+        color: #e2e8f0;
+        padding: 1.5rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+
+        code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+    }
+
+    a {
+        color: #667eea;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+
+        &:hover {
+            border-bottom-color: #667eea;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+// Alternative dark theme variant
+.postDetail.darkTheme {
+    background: #2d3748;
+    color: #e2e8f0;
+
+    .title {
+        color: #f7fafc;
+    }
+
+    .content {
+        color: #cbd5e0;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #f7fafc;
+        }
+
+        blockquote {
+            background-color: #4a5568;
+            border-left-color: #667eea;
+            color: #e2e8f0;
+        }
+
+        code {
+            background-color: #4a5568;
+            color: #fbb6ce;
+        }
+
+        pre {
+            background-color: #1a202c;
+        }
+    }
+}
+
+// Animation for content loading
+.postDetail {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Print styles
+@media print {
+    .postDetail {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+
+        .title::after {
+            display: none;
+        }
+    } }
