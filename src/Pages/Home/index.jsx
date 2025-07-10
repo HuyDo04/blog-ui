@@ -18,6 +18,14 @@ function Home () {
     return (
         <div className={styles.container}>
           <h1>All Topics</h1>
+            <div className={styles.actions}>
+              <button className={styles.createTopicButton} onClick={() => navigate("/topics/create")}>
+                + Tạo mới Topic
+              </button>
+              <button className={styles.createPostButton} onClick={() => navigate("/posts/create")}>
+                + Tạo mới Post
+              </button>
+            </div>
           {topics.length === 0 && <p>Loading...</p>}
           <ul>
             {topics.map((topic) => (
@@ -32,7 +40,7 @@ function Home () {
                     key={post.id}
                     className={styles.postItem}
                     onClick={() => navigate(`/posts/${post.slug}`)}
-                    style={{ cursor: "pointer" }} 
+                    style={{ cursor: "pointer" }}
                   >
                     <h3 className={styles.postTitle}>Tiêu đề bài đăng: {post.title}</h3>
                     <p className={styles.postContent}>Nội dung: {post.content}</p>

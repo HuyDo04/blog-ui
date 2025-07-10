@@ -19,7 +19,7 @@ export const update = async (id, data) => {
     const response = await httpRequest.put(`/posts/id/${id}`, data);
     console.log("Update in:", response);
     return response;
-  }
+}
   
 export const del = async (id) => {
     const response = await httpRequest.del(`/posts/${id}`)

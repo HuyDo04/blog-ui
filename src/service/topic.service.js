@@ -1,8 +1,12 @@
 import httpRequest from "../utils/httpRequest"
 
+export const create = async (data) => {
+    const response = await httpRequest.post("/topics", data)
+    return response
+}
+
 export const getAll = async () => {
     const response = await httpRequest.get("/topics");
-    
     return response
 }
 
@@ -12,12 +16,12 @@ export const getAllTopicPost = async () => {
 }
 
 export const getOne = async (id) => {
-    const response = await httpRequest.get(`/topics/${id}`)
+    const response = await httpRequest.get(`/topics/id/${id}`)
     return response
 }
 
-export const update = async (id) => {
-    const response = await httpRequest.put(`/topics/${id}`)
+export const update = async (id, data) => {
+    const response = await httpRequest.put(`/topics/${id}`, data)
     return response
 }
 
@@ -31,5 +35,6 @@ export default {
     getOne,
     update,
     del,
-    getAllTopicPost
+    getAllTopicPost,
+    create
 }
